@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block content %}
+<!-- Aqui va el form -->
+<section class="section-form">
+  <h1 class="title text-center">Editar registro</h1>
+  <form
+    name="miformulario"
+    class="form text-center"
+    action="/editarDatos/{{datos.0}}"
+    ,
+    method="POST"
+  >
+    <input
+      type="text"
+      name="nombre"
+      class="input nombre rounded-3"
+      placeholder="Nombre"
+      value="{{datos.1}}"
+      required
+    />
+    <input
+      type="tel"
+      name="telefono"
+      class="input telefono rounded-3"
+      placeholder="Telefono"
+      value="{{datos.2}}"
+      pattern="[0-9]{10}"
+      required
+    />
+
+    <input
+      type="email"
+      name="correo"
+      class="input correo rounded-3"
+      placeholder="Correo"
+      value="{{datos.3}}"
+      required
+    />
+    <input
+      type="number"
+      class="input edad rounded-3"
+      name="edad"
+      min="12"
+      max="110"
+      placeholder="Edad"
+      value="{{datos.4}}"
+      required
+    />
+
+    <textarea
+      name="comentarios"
+      class="input comentarios rounded-3"
+      rows="4"
+      cols="24"
+      placeholder="Mensaje"
+    >
+{{datos.5}} </textarea
+    >
+
+    <input type="submit" class="submit-btn rounded-3" value="Actualizar" />
+  </form>
+</section>
+{% endblock content %}

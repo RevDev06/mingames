@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Aqui va el form -->
+  <section class="section-form">
+    <h1 class="title text-center">Contáctanos</h1>
+      <form name="miformulario" class="form text-center" action="/agregar", method='POST'>
+        <input type="text" name="nombre" class="input nombre rounded-3" placeholder="Nombre" required>
+        <input type="tel" name="telefono"  class="input telefono rounded-3" placeholder="Telefono" pattern="[0-9]{10}" required>
+        
+        <input type="email" name="correo" class="input correo rounded-3" placeholder="Correo" required>
+        <input type="number" class="input edad rounded-3" name="edad" min="12" max="110" placeholder="Edad" required>
+        
+        <textarea name="comentarios" class="input comentarios rounded-3" rows="4" cols="24" placeholder="Mensaje"></textarea>
+        
+        
+        <input type="submit" class="submit-btn rounded-3 " value="Enviar">
+      </form>
+  </section>
+{% endblock content %}
